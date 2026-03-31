@@ -41,6 +41,8 @@ data class FrontendSettings(
     val organizationLogo: String = "https://avatars.githubusercontent.com/u/88636591",
     @get:Doc(title = "Privacy Policy", description = "Link to your privacy policy displayed in the footer. Useful for EU GDPR compliance.")
     val privacyPolicy: String = "",
+    @get:Doc(title = "Terms Of Use", description = "Link to your terms of use displayed in the footer.")
+    val termsOfUse: String = "",
     @get:Doc(title = "Legal Notice", description = "Link to your legal notice displayed in the footer. Useful for local law compliance.")
     val legalNotice: String = "",
     @get:Doc(title = "ICP License", description = """

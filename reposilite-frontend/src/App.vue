@@ -21,7 +21,7 @@ import useTheme from "./store/theme"
 import useQualifier from "./store/qualifier"
 import usePlaceholders from './store/placeholders'
 
-const { title, description, icpLicense, privacyPolicy, legalNotice } = usePlaceholders()
+const { title, description, icpLicense, privacyPolicy, termsOfUse, legalNotice } = usePlaceholders()
 const { theme, fetchColorMode } = useTheme()
 const { initializeSession } = useSession()
 const { qualifier } = useQualifier()
@@ -41,11 +41,13 @@ initializeSession().catch(() => {})
         class="router-view-full "
         :qualifier="qualifier"
       />
-      <div v-if="icpLicense || privacyPolicy || legalNotice" class="absolute h-8 pb-2 w-full text-center text-xs dark:bg-black dark:text-white">
+      <div v-if="icpLicense || privacyPolicy || termsOfUse || legalNotice" class="absolute h-8 pb-2 w-full text-center text-xs dark:bg-black dark:text-white">
         <a v-if="icpLicense" href="https://beian.miit.gov.cn" target="_blank">{{ icpLicense }}</a>
         <span v-if="icpLicense && privacyPolicy" class="mx-1">·</span>
         <a v-if="privacyPolicy" :href="privacyPolicy" target="_blank">Privacy Policy</a>
-        <span v-if="(icpLicense || privacyPolicy) && legalNotice" class="mx-1">·</span>
+        <span v-if="(icpLicense || privacyPolicy) && termsOfUse" class="mx-1">·</span>
+        <a v-if="termsOfUse" :href="termsOfUse" target="_blank">Terms Of Use</a>
+        <span v-if="(icpLicense || privacyPolicy || termsOfUse) && legalNotice" class="mx-1">·</span>
         <a v-if="legalNotice" :href="legalNotice" target="_blank">Legal Notice</a>
       </div>
     </div>
