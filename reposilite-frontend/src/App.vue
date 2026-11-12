@@ -42,7 +42,6 @@ initializeSession().catch(() => {})
         class="flex-1"
         :qualifier="qualifier"
       />
-<<<<<<< HEAD
       <footer class="page-footer">
         <div class="container mx-auto flex items-center justify-center gap-2 <sm:flex-wrap">
           <span class="footer-attribution">
@@ -74,7 +73,7 @@ initializeSession().catch(() => {})
             <span aria-hidden="true">·</span>
             <a
               :href="privacyPolicy"
-              target="_blank"
+              target="_self"
               rel="noopener noreferrer"
             >Privacy Policy</a>
           </template>
@@ -82,7 +81,7 @@ initializeSession().catch(() => {})
             <span aria-hidden="true">·</span>
             <a
               :href="termsOfUse"
-              target="_blank"
+              target="_self"
               rel="noopener noreferrer"
             >Terms Of Use</a>
           </template>
@@ -90,7 +89,7 @@ initializeSession().catch(() => {})
             <span aria-hidden="true">·</span>
             <a
               :href="legalNotice"
-              target="_blank"
+              target="_self"
               rel="noopener noreferrer"
             >Legal Notice</a>
           </template>
