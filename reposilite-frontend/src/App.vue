@@ -93,6 +93,7 @@ initializeSession().catch(() => {})
 </template>
 
 <style>
+
 html, body {
   @apply bg-gray-100 dark:bg-black;
 }
