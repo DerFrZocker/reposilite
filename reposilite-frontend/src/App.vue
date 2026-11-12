@@ -22,7 +22,7 @@ import useQualifier from "./store/qualifier"
 import usePlaceholders from './store/placeholders'
 import HeartIcon from './components/icons/HeartIcon.vue'
 
-const { title, description, icpLicense, privacyPolicy, legalNotice } = usePlaceholders()
+const { title, description, icpLicense, privacyPolicy, termsOfUse, legalNotice } = usePlaceholders()
 const { theme, fetchColorMode } = useTheme()
 const { initializeSession } = useSession()
 const { qualifier } = useQualifier()
@@ -42,6 +42,7 @@ initializeSession().catch(() => {})
         class="flex-1"
         :qualifier="qualifier"
       />
+<<<<<<< HEAD
       <footer class="page-footer">
         <div class="container mx-auto flex items-center justify-center gap-2 <sm:flex-wrap">
           <span class="footer-attribution">
@@ -77,13 +78,21 @@ initializeSession().catch(() => {})
               rel="noopener noreferrer"
             >Privacy Policy</a>
           </template>
+          <template v-if="termsOfUse">
+            <span aria-hidden="true">·</span>
+            <a
+              :href="termsOfUse"
+              target="_blank"
+              rel="noopener noreferrer"
+            >Terms Of Use</a>
+          </template>
           <template v-if="legalNotice">
             <span aria-hidden="true">·</span>
             <a
               :href="legalNotice"
               target="_blank"
               rel="noopener noreferrer"
-            >Privacy Policy</a>
+            >Legal Notice</a>
           </template>
 
         </div>

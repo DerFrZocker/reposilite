@@ -23,6 +23,7 @@ export default function usePlaceholders() {
   const organizationWebsite = available ? '{{REPOSILITE.ORGANIZATION_WEBSITE}}' : location.protocol + '//' + location.host + basePath
   const organizationLogo = available ? '{{REPOSILITE.ORGANIZATION_LOGO}}' : 'logo.png'
   const privacyPolicy = available ? '{{REPOSILITE.PRIVACY_POLICY}}' : 'https://example.com/privacy'
+  const termsOfUse = available ? '{{REPOSILITE.TERMS_OF_USE}}' : 'https://example.com/terms'
   const legalNotice = available ? '{{REPOSILITE.LEGAL_NOTICE}}' : 'https://example.com/legal'
   const icpLicense = available ? '{{REPOSILITE.ICP_LICENSE}}' : '国ICP备000000000号'
   const javadocSuffixes = available ? '{{REPOSILITE.JAVADOC_SUFFIXES}}'.split(',').filter(suffix => suffix.length > 0) : ['-javadoc.jar', '-groovydoc.jar']
@@ -44,6 +45,7 @@ export default function usePlaceholders() {
     organizationWebsite,
     organizationLogo,
     privacyPolicy,
+    termsOfUse,
     legalNotice,
     icpLicense,
     javadocSuffixes,
