@@ -74,6 +74,7 @@ class FrontendFacade internal constructor(
                 put("{{REPOSILITE.ORGANIZATION_LOGO}}", organizationLogo)
                 put("{{REPOSILITE.ICP_LICENSE}}", icpLicense)
                 put("{{REPOSILITE.PRIVACY_POLICY}}", privacyPolicy)
+                put("{{REPOSILITE.LEGAL_NOTICE}}", legalNotice)
 
                 additionalPlaceholders.forEach { (key, value) ->
                     put(key, value.get())

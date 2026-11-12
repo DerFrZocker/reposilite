@@ -22,7 +22,7 @@ import useQualifier from "./store/qualifier"
 import usePlaceholders from './store/placeholders'
 import HeartIcon from './components/icons/HeartIcon.vue'
 
-const { title, description, icpLicense, privacyPolicy } = usePlaceholders()
+const { title, description, icpLicense, privacyPolicy, legalNotice } = usePlaceholders()
 const { theme, fetchColorMode } = useTheme()
 const { initializeSession } = useSession()
 const { qualifier } = useQualifier()
@@ -77,6 +77,15 @@ initializeSession().catch(() => {})
               rel="noopener noreferrer"
             >Privacy Policy</a>
           </template>
+          <template v-if="legalNotice">
+            <span aria-hidden="true">·</span>
+            <a
+              :href="legalNotice"
+              target="_blank"
+              rel="noopener noreferrer"
+            >Privacy Policy</a>
+          </template>
+
         </div>
       </footer>
     </div>
